@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAC | Lobel Accountancy Corporation</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1a'/%3E%3Ctext x='3' y='24' font-family='Arial Black,Arial' font-weight='900' font-size='17' fill='%23B8975A'%3ELAC%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:  #1a1a1a;
+      --ink:    #2e2e2e;
+      --gold:   #b8975a;
+      --gold-lt:#d4b07a;
+      --cream:  #f5f0e8;
+      --off:    #faf8f4;
+      --muted:  #6b7a8a;
+      --rule:   #d8cfc2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--off); color: var(--black); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 4rem;
+      background: rgba(250,248,244,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      animation: fadeDown .6s ease both;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .nav-mark { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: var(--black); flex-shrink: 0; }
+    .nav-mark span { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: .95rem; color: var(--gold); letter-spacing: .04em; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.3; }
+    .nav-logo-name { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: .7rem; letter-spacing: .13em; color: var(--black); text-transform: uppercase; }
+    .nav-logo-sub  { font-size: .58rem; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { font-size: .73rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--black); border: 1.5px solid var(--gold); padding: .48rem 1.25rem; text-decoration: none; transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--gold); color: #fff; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: var(--cream); z-index: 0; }
+    .hero-text { position: relative; z-index: 1; padding-right: 4rem; }
+    .hero-lac { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: clamp(5.5rem, 11vw, 9rem); color: var(--black); line-height: .95; letter-spacing: -.02em; margin-bottom: .5rem; animation: fadeUp .7s .12s ease both; }
+    .hero-lac .a { color: var(--gold); }
+    .hero-fullname { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: .76rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; animation: fadeUp .7s .25s ease both; }
+    .hero-divider { width: 44px; height: 2.5px; background: var(--gold); margin-bottom: 1.5rem; animation: fadeUp .7s .32s ease both; }
+    .hero-sub { font-size: .97rem; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 430px; margin-bottom: 2.3rem; animation: fadeUp .7s .46s ease both; }
+    .hero-actions { display: flex; gap: 1.1rem; flex-wrap: wrap; animation: fadeUp .7s .58s ease both; }
+    .btn-primary { background: var(--black); color: #fff; padding: .8rem 2rem; font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .2s; }
+    .btn-primary:hover { background: var(--ink); }
+    .btn-ghost { border: 1.5px solid var(--black); color: var(--black); padding: .8rem 2rem; font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .2s, color .2s; }
+    .btn-ghost:hover { background: var(--black); color: #fff; }
+    .hero-visual { position: relative; z-index: 1; display: flex; flex-direction: column; gap: .85rem; padding-left: 3rem; animation: fadeUp .7s .42s ease both; }
+    .stat-card { background: #fff; border: 1px solid var(--rule); padding: 1.35rem 1.65rem; display: flex; align-items: center; gap: 1.15rem; }
+    .stat-card:first-child { margin-left: 2rem; }
+    .stat-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--cream); display: flex; align-items: center; justify-content: center; }
+    .stat-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 500; color: var(--black); line-height: 1; }
+    .stat-label { font-size: .68rem; color: var(--muted); margin-top: .15rem; }
+
+    /* GOLD RULE */
+    .gold-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 4rem; }
+
+    /* INTRO */
+    .intro { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; padding: 6rem 4rem; align-items: start; }
+    .intro-label { font-size: .67rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); padding-top: .35rem; }
+    .intro-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 300; color: var(--black); line-height: 1.3; margin-bottom: 1.2rem; }
+    .intro-body p { font-size: .95rem; line-height: 1.85; color: var(--muted); max-width: 610px; margin-bottom: 1rem; }
+
+    /* SERVICES */
+    .services { background: var(--black); padding: 6rem 4rem; }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 2rem; }
+    .services-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.85rem, 3.5vw, 2.75rem); font-weight: 300; color: #fff; line-height: 1.2; }
+    .services-header h2 em { font-style: italic; color: var(--gold-lt); }
+    .services-header p { font-size: .8rem; color: rgba(255,255,255,.35); max-width: 220px; text-align: right; line-height: 1.7; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.07); }
+    .service-item { background: var(--black); padding: 2.1rem 1.7rem; border-top: 2px solid transparent; transition: border-color .25s, background .25s; }
+    .service-item:hover { border-color: var(--gold); background: rgba(184,151,90,.05); }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: rgba(255,255,255,.07); line-height: 1; margin-bottom: .65rem; }
+    .service-title { font-size: .88rem; font-weight: 500; color: #fff; letter-spacing: .02em; margin-bottom: .65rem; }
+    .service-desc { font-size: .78rem; line-height: 1.75; color: rgba(255,255,255,.4); }
+    .service-tag { display: inline-block; margin-top: 1rem; font-size: .63rem; letter-spacing: .13em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,151,90,.33); padding: .2rem .58rem; }
+
+    /* PROCESS */
+    .process { padding: 6rem 4rem; background: var(--cream); }
+    .section-label { font-size: .67rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; }
+    .process h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 300; color: var(--black); margin-bottom: 3.2rem; max-width: 460px; }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+    .step { position: relative; padding-top: 1rem; }
+    .step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--rule); }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold); opacity: .32; line-height: 1; margin-bottom: .45rem; }
+    .step-title { font-size: .86rem; font-weight: 500; color: var(--black); margin-bottom: .5rem; }
+    .step-desc { font-size: .78rem; line-height: 1.75; color: var(--muted); }
+
+    /* WHY */
+    .why { padding: 6rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .why-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 300; color: var(--black); line-height: 1.3; margin-bottom: 1.2rem; margin-top: .7rem; }
+    .why-text p { font-size: .93rem; line-height: 1.85; color: var(--muted); margin-bottom: 1rem; }
+    .why-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: .85rem; }
+    .why-item { display: flex; gap: .85rem; align-items: flex-start; }
+    .why-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: .55rem; flex-shrink: 0; }
+    .why-item-text { font-size: .86rem; line-height: 1.7; color: var(--ink); }
+    .why-panel { background: var(--black); padding: 2.6rem; display: flex; flex-direction: column; gap: 1.6rem; }
+    .credential { border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 1.5rem; }
+    .credential:last-child { border-bottom: none; padding-bottom: 0; }
+    .credential-title { font-size: .67rem; letter-spacing: .13em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+    .credential-body { font-size: .85rem; color: rgba(255,255,255,.62); line-height: 1.6; }
+
+    /* LAC BAND */
+    .lac-band { background: var(--black); padding: 3.5rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+    .lac-band-mark { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: 5rem; color: transparent; -webkit-text-stroke: 2px var(--gold); letter-spacing: -.02em; line-height: 1; flex-shrink: 0; }
+    .lac-band-rule { width: 1px; height: 90px; background: rgba(255,255,255,.1); flex-shrink: 0; }
+    .lac-band-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 300; color: #fff; margin-bottom: .55rem; }
+    .lac-band-fullname { font-size: .72rem; font-weight: 300; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .7rem; }
+    .lac-band-text p { font-size: .82rem; color: rgba(255,255,255,.42); line-height: 1.7; max-width: 480px; }
+
+    /* CONTACT */
+    .contact { background: var(--cream); padding: 6rem 4rem; }
+    .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 300; color: var(--black); line-height: 1.2; margin-bottom: 1rem; margin-top: .7rem; }
+    .contact h2 em { font-style: italic; color: var(--gold); }
+    .contact p { font-size: .92rem; line-height: 1.8; color: var(--muted); margin-bottom: 2.3rem; }
+    .contact-methods { display: flex; gap: 1.3rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem; }
+    .contact-method { display: flex; align-items: center; gap: .52rem; font-size: .8rem; color: var(--ink); text-decoration: none; border: 1px solid var(--rule); padding: .72rem 1.25rem; transition: border-color .2s, color .2s; background: #fff; }
+    .contact-method:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-method svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .contact-note { font-size: .73rem; color: var(--muted); letter-spacing: .04em; }
+
+    /* FOOTER */
+    footer { background: var(--black); padding: 2.2rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { display: flex; align-items: center; gap: 14px; }
+    .footer-mark { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--gold); letter-spacing: .04em; }
+    .footer-divider { width: 1px; height: 16px; background: rgba(255,255,255,.15); }
+    .footer-name { font-size: .68rem; font-weight: 300; letter-spacing: .11em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+    .footer-copy { font-size: .68rem; color: rgba(255,255,255,.22); }
+    .footer-links { display: flex; gap: 1.8rem; }
+    .footer-links a { font-size: .68rem; color: rgba(255,255,255,.22); text-decoration: none; letter-spacing: .07em; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-14px); } to { opacity:1; transform:none; } }
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px);  } to { opacity:1; transform:none; } }
+    .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
+      .hero::before { display: none; }
+      .hero-text { padding-right: 0; }
+      .hero-visual { padding-left: 0; margin-top: 2rem; }
+      .stat-card:first-child { margin-left: 0; }
+      .intro { grid-template-columns: 1fr; gap: 1rem; padding: 4rem 1.5rem; }
+      .services { padding: 4rem 1.5rem; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .services-header p { text-align: left; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process { padding: 4rem 1.5rem; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .why { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+      .lac-band { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 3rem 1.5rem; }
+      .lac-band-rule { display: none; }
+      .contact { padding: 4rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .gold-rule { margin: 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-mark"><span>LAC</span></div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Lobel Accountancy Corporation</span>
+      <span class="nav-logo-sub">Certified Public Accountant</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Start a Conversation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-lac">L<span class="a">A</span>C</div>
+    <div class="hero-fullname">Lobel Accountancy Corporation &nbsp;·&nbsp; CPA</div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Audit, assurance, and financial reporting services for privately held companies that demand institutional-quality work — without the institutional overhead.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#services">Our Services</a>
+      <a class="btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="stat-card">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Years audit & financial reporting</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="stat-num">CPA</div><div class="stat-label">Active California licensed firm</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div><div class="stat-num">$400M+</div><div class="stat-label">Portfolios overseen across complex structures</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- INTRO -->
+<section class="intro reveal">
+  <div class="intro-label">Who We Are</div>
+  <div class="intro-body">
+    <h2>The financial rigor of a large firm. The attention of a dedicated partner.</h2>
+    <p>Lobel Accountancy Corporation serves privately held companies, lenders, and growing businesses that need audit-quality financial work and clear, decision-ready reporting — without being handed off to junior staff.</p>
+    <p>Every engagement is led by a senior CPA with deep experience across audits, financial statement preparation, internal controls, and complex entity structures. We believe the best financial work is precise, well-documented, and actually understood by the people it serves.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <h2>What We <em>Do</em></h2>
+    <p>Engagements structured around your needs — not standardized packages.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-item"><div class="service-num">01</div><div class="service-title">Audit &amp; Assurance</div><div class="service-desc">Full-scope financial statement audits and reviews for private companies, lenders, and entities preparing for capital raises, debt covenants, or investor reporting.</div><span class="service-tag">Licensed CPA Firm</span></div>
+    <div class="service-item"><div class="service-num">02</div><div class="service-title">Financial Statement Preparation</div><div class="service-desc">GAAP-compliant financial statements from trial balance to final package. Footnote disclosures, management discussion, and multi-entity consolidations.</div><span class="service-tag">Core Service</span></div>
+    <div class="service-item"><div class="service-num">03</div><div class="service-title">Fractional Controller / CFO</div><div class="service-desc">Senior financial leadership on a part-time or project basis. Month-end close ownership, reporting infrastructure, and finance team management.</div><span class="service-tag">High Demand</span></div>
+    <div class="service-item"><div class="service-num">04</div><div class="service-title">Audit Readiness &amp; PBC Support</div><div class="service-desc">Prepare your team and books before auditors arrive. We build the workpapers, memos, and schedules that make audits faster and less disruptive.</div><span class="service-tag">Saves You Money</span></div>
+    <div class="service-item"><div class="service-num">05</div><div class="service-title">Internal Controls &amp; Compliance</div><div class="service-desc">Control environment design, documentation, and testing. Policy development and risk assessment memos for companies preparing for outside scrutiny.</div><span class="service-tag">Risk Management</span></div>
+    <div class="service-item"><div class="service-num">06</div><div class="service-title">Accounting Systems &amp; Automation</div><div class="service-desc">ERP implementation support, close process automation, and financial reporting infrastructure. We build the systems — not just advise on them.</div><span class="service-tag">NetSuite · Excel · Power Query</span></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="reveal">A straightforward engagement process</h2>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">01</div><div class="step-title">Initial Conversation</div><div class="step-desc">No-obligation call to understand your situation, timeline, and what you actually need — not what a standard package includes.</div></div>
+    <div class="step reveal"><div class="step-num">02</div><div class="step-title">Scoped Proposal</div><div class="step-desc">A clear written proposal with defined deliverables, timeline, and fee. No surprises, no scope creep without your approval.</div></div>
+    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Engagement &amp; Execution</div><div class="step-desc">Senior-led work from day one. Direct access to the person doing the work — not an account manager relaying messages.</div></div>
+    <div class="step reveal"><div class="step-num">04</div><div class="step-title">Delivery &amp; Follow-Through</div><div class="step-desc">Clean deliverables, clear documentation, and availability to walk through findings with your team or board.</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-text reveal">
+    <div class="section-label">Why LAC</div>
+    <h2>Senior expertise. Every engagement, every time.</h2>
+    <p>Most firms assign their best people to their biggest clients. At Lobel Accountancy Corporation, every client gets the same level of attention — because every engagement is led by the same senior CPA.</p>
+    <div class="why-list">
+      <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Deep experience with complex entity structures — consolidated subsidiaries, VIEs, securitization trusts, and multi-state operations</div></div>
+      <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Financial statements and memos written to be read and understood, not just filed</div></div>
+      <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Systems-fluent — we build and improve the infrastructure behind your numbers, not just report on them</div></div>
+      <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Flat, direct communication — you always know where things stand</div></div>
+    </div>
+  </div>
+  <div class="why-panel reveal">
+    <div class="credential"><div class="credential-title">Credentials</div><div class="credential-body">Certified Public Accountant — Active California License<br>California Accountancy Corporation</div></div>
+    <div class="credential"><div class="credential-title">Specializations</div><div class="credential-body">Private company audits &amp; reviews · Financial statement preparation · GAAP technical accounting · CECL · ASC 842 · ASC 860 · Multi-entity consolidation</div></div>
+    <div class="credential"><div class="credential-title">Industries</div><div class="credential-body">Financial services · Specialty finance · Real estate · Manufacturing · Professional services · Healthcare · Technology</div></div>
+    <div class="credential"><div class="credential-title">Location</div><div class="credential-body">Based in Southern California<br>Serving clients statewide and nationally</div></div>
+  </div>
+</section>
+
+<!-- LAC BAND -->
+<section class="lac-band reveal">
+  <div class="lac-band-mark">LAC</div>
+  <div class="lac-band-rule"></div>
+  <div class="lac-band-text">
+    <div class="lac-band-fullname">Lobel Accountancy Corporation</div>
+    <h3>Built on the belief that serious financial work deserves serious attention.</h3>
+    <p>A California licensed CPA firm serving privately held companies with audit, assurance, and financial advisory services.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label" style="display:flex;justify-content:center;">Get in Touch</div>
+    <h2>Let's talk about <em>what you need</em></h2>
+    <p>Whether you have a specific engagement in mind or just want to explore whether we're a fit, we're happy to have a straightforward conversation — no sales pitch, no obligation.</p>
+    <div class="contact-methods">
+      <a class="contact-method" href="mailto:jlobel@lobelaccountancy.com">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        jlobel@lobelaccountancy.com
+      </a>
+    </div>
+    <p class="contact-note">We typically respond within one business day.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <span class="footer-mark">LAC</span>
+    <div class="footer-divider"></div>
+    <span class="footer-name">Lobel Accountancy Corporation</span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Lobel Accountancy Corporation. All rights reserved.</div>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">Disclaimer</a></div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
