@@ -23,8 +23,7 @@
   <link rel="preconnect" href="https://www.linkedin.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -72,9 +71,9 @@
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
     .hero::before { content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: var(--cream); z-index: 0; }
     .hero-text { position: relative; z-index: 1; padding-right: 4rem; }
-    .hero-lac { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; font-size: clamp(5.5rem,11vw,9rem); color: var(--navy); line-height: .95; letter-spacing: .05em; margin-bottom: .5rem; animation: fadeUp .7s .12s ease both; }
+    .hero-lac { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; font-size: clamp(5.5rem,11vw,9rem); color: var(--navy); line-height: .95; letter-spacing: .05em; margin-bottom: .5rem; animation: slideUp .7s .12s ease both; }
     .hero-lac .a { color: var(--gold); }
-    .hero-fullname { font-family: "DM Sans", sans-serif; font-weight: 300; font-size: .76rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; animation: fadeUp .7s .25s ease both; }
+    .hero-fullname { font-family: "DM Sans", sans-serif; font-weight: 300; font-size: .76rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; animation: slideUp .7s .25s ease both; }
     .hero-divider { width: 44px; height: 2.5px; background: var(--gold); margin-bottom: 1.5rem; animation: fadeUp .7s .32s ease both; }
     .hero-sub { font-size: .97rem; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 430px; margin-bottom: 2.3rem; animation: fadeUp .7s .46s ease both; }
     .hero-actions { display: flex; gap: 1.1rem; flex-wrap: wrap; animation: fadeUp .7s .58s ease both; }
@@ -325,6 +324,7 @@
     /* ── ANIMATIONS ── */
     @keyframes fadeDown { from { opacity:0; transform:translateY(-14px); } to { opacity:1; transform:none; } }
     @keyframes fadeUp   { from { opacity:0; transform:translateY(22px);  } to { opacity:1; transform:none; } }
+    @keyframes slideUp  { from { transform:translateY(22px); } to { transform:none; } }
     .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity:1; transform:none; }
 
