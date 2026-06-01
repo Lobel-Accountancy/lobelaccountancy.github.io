@@ -234,8 +234,8 @@
     /* ── ABOUT ── */
     .about { padding: 6rem 4rem; background: var(--off); }
     .about-inner { display: grid; grid-template-columns: 1fr 1.65fr; gap: 5rem; align-items: start; }
-    .about-photo-wrap { position: sticky; top: 100px; }
-    .about-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 20%; display: block; border: 1px solid var(--rule); }
+    .about-photo-wrap { position: sticky; top: 100px; max-width: 300px; }
+    .about-photo { width: 100%; max-width: 300px; height: 360px; object-fit: cover; object-position: center top; display: block; border: 1px solid var(--rule); }
     .about-photo-caption { margin-top: 1rem; display: flex; flex-direction: column; gap: .2rem; }
     .about-photo-name { font-size: .82rem; font-weight: 500; color: var(--black); letter-spacing: .03em; }
     .about-photo-title { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
@@ -352,7 +352,7 @@
       .about { padding: 4rem 1.5rem; }
       .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-photo-wrap { position: static; }
-      .about-photo { max-width: 280px; }
+      .about-photo { max-width: 260px; height: 300px; }
       .process { padding: 4rem 1.5rem; }
       .process-steps { grid-template-columns: 1fr 1fr; }
       .why { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
@@ -375,19 +375,18 @@
     .trust-item-sub { font-size: .63rem; color: var(--muted); }
 
     /* ── TESTIMONIALS ── */
-    .testimonials { padding: 6rem 4rem; background: var(--navy); }
-    .testimonials .section-label { color: var(--gold); margin-bottom: .9rem; }
-    .testimonials h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.65rem,3vw,2.4rem); font-weight: 300; color: #fff; margin-bottom: 3rem; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .testimonial-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 2rem 2rem 1.7rem; position: relative; }
-    .testimonial-card::before { content: "\201C"; position: absolute; top: 1rem; right: 1.4rem; font-family: "Cormorant Garamond", serif; font-size: 3.5rem; line-height: 1; color: var(--gold); opacity: .25; }
-    .testimonial-quote { font-family: "Cormorant Garamond", serif; font-size: 1.08rem; font-style: italic; font-weight: 300; color: rgba(255,255,255,.75); line-height: 1.7; margin-bottom: 1.4rem; }
-    .testimonial-attr { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1rem; }
-    .testimonial-client { font-size: .76rem; font-weight: 500; color: rgba(255,255,255,.65); letter-spacing: .04em; }
-    .testimonial-service { font-size: .68rem; color: rgba(255,255,255,.3); margin-top: .2rem; letter-spacing: .06em; }
+    .engagements { padding: 6rem 4rem; background: var(--navy); }
+    .engagements .section-label { color: var(--gold); margin-bottom: .9rem; }
+    .engagements h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.65rem,3vw,2.4rem); font-weight: 300; color: #fff; margin-bottom: 3rem; }
+    .engagements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .engagement-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-top: 2px solid var(--gold); padding: 2rem 2rem 1.7rem; position: relative; }
+    .engagement-body { font-family: "Cormorant Garamond", serif; font-size: 1.08rem; font-weight: 300; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 1.4rem; }
+    .engagement-attr { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1rem; }
+    .engagement-client { font-size: .76rem; font-weight: 500; color: rgba(255,255,255,.65); letter-spacing: .04em; }
+    .engagement-service { font-size: .68rem; color: rgba(255,255,255,.3); margin-top: .2rem; letter-spacing: .06em; }
     @media (max-width: 768px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .testimonials { padding: 4rem 1.5rem; }
+      .engagements-grid { grid-template-columns: 1fr; }
+      .engagements { padding: 4rem 1.5rem; }
     }
 
     /* ── FAQ ── */
@@ -807,24 +806,16 @@
       <div class="about-expertise">
         <div class="about-expertise-title">Technical Expertise</div>
         <div class="expertise-tags">
-          <span class="expertise-tag">ASC 860 Transfers &amp; Servicing</span>
-          <span class="expertise-tag">ASC 842 Leases</span>
-          <span class="expertise-tag">CECL / ASC 326</span>
-          <span class="expertise-tag">ASC 810 VIE Consolidation</span>
-          <span class="expertise-tag">FAS 91 / ASC 310-20</span>
           <span class="expertise-tag">Revenue Recognition (ASC 606)</span>
-          <span class="expertise-tag">Multi-Entity Consolidation</span>
-          <span class="expertise-tag">Securitization Accounting</span>
-          <span class="expertise-tag">Internal Controls Design</span>
-          <span class="expertise-tag">SOX Compliance</span>
-          <span class="expertise-tag">Public Company Audits</span>
-          <span class="expertise-tag">Baker Tilly Alumni</span>
-          <span class="expertise-tag">ERP Implementation</span>
+          <span class="expertise-tag">Lease Accounting (ASC 842)</span>
           <span class="expertise-tag">Business Combinations (ASC 805)</span>
-          <span class="expertise-tag">Goodwill &amp; Intangibles</span>
-          <span class="expertise-tag">Stock Compensation (ASC 718)</span>
-          <span class="expertise-tag">Deferred Revenue</span>
-          <span class="expertise-tag">Python Automation</span>
+          <span class="expertise-tag">Goodwill &amp; Intangibles (ASC 350)</span>
+          <span class="expertise-tag">Going Concern Assessment</span>
+          <span class="expertise-tag">Internal Controls &amp; Fraud Risk</span>
+          <span class="expertise-tag">Equity &amp; Capital Structure</span>
+          <span class="expertise-tag">Financial Statement Preparation</span>
+          <span class="expertise-tag">Month-End Close Automation</span>
+          <span class="expertise-tag">Python &amp; VBA Automation</span>
           <span class="expertise-tag">NetSuite</span>
           <span class="expertise-tag">Power Query</span>
         </div>
@@ -853,43 +844,43 @@
   </div>
   <div class="why-panel reveal">
     <div class="credential"><div class="credential-title">Credentials</div><div class="credential-body">Certified Public Accountant — Active California License<br>Certified Fraud Examiner (CFE)<br>California Accountancy Corporation</div></div>
-    <div class="credential"><div class="credential-title">Technical Standards</div><div class="credential-body">GAAS · GAAP · FASB ASC · ASC 606 Revenue Recognition · ASC 842 Leases · ASC 840 Leases · CECL / ASC 326 · ASC 860 Transfers · ASC 810 Consolidation · ASC 718 Stock Compensation · ASC 805 Business Combinations · ASC 350 Intangibles &amp; Goodwill · FAS 91 / ASC 310-20</div></div>
+    <div class="credential"><div class="credential-title">Technical Standards</div><div class="credential-body">GAAS · GAAP · Revenue Recognition (ASC 606) · Lease Accounting (ASC 842) · Business Combinations (ASC 805) · Goodwill &amp; Intangibles (ASC 350) · Going Concern Assessment · Internal Controls &amp; Fraud Risk · Equity &amp; Capital Structure · Financial Statement Preparation</div></div>
     <div class="credential"><div class="credential-title">Industries</div><div class="credential-body">Financial services · Specialty lending · Manufacturing · Distribution · Technology · Retail · Professional services</div></div>
     <div class="credential"><div class="credential-title">Location</div><div class="credential-body">Based in Southern California<br>Serving clients statewide and nationally</div></div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials reveal">
-  <div class="section-label">Client Results</div>
-  <h2>What clients say</h2>
-  <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">We had never been through a full GAAS audit before. Jeffrey came in, identified the gaps between our internal records and what auditors would need, and built a prep process that made the whole engagement faster and less disruptive than we expected. He was the reason it went smoothly.</div>
-      <div class="testimonial-attr">
-        <div class="testimonial-client">Specialty Lender — Southern California</div>
-        <div class="testimonial-service">First full-scope GAAS audit preparation</div>
+<section class="engagements reveal">
+  <div class="section-label">Selected Work</div>
+  <h2>Engagements &amp; outcomes</h2>
+  <div class="engagements-grid">
+    <div class="engagement-card reveal">
+      <div class="engagement-body">A Southern California specialty lender preparing for its first full-scope GAAS audit had no formal close process or PBC documentation. We mapped every audit area to supporting workpapers, identified gaps between internal records and auditor expectations, and built a repeatable prep process. The engagement was completed on schedule with no material adjustments.</div>
+      <div class="engagement-attr">
+        <div class="engagement-client">Specialty Lender — Southern California</div>
+        <div class="engagement-service">First full-scope GAAS audit preparation</div>
       </div>
     </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">We had five entities and a consolidation process that lived entirely in someone's head. Jeffrey rebuilt the whole thing — Power Query, automated workbooks, documented logic. Month-end close went from three weeks to one. I didn't realize how much time we were losing until we weren't anymore.</div>
-      <div class="testimonial-attr">
-        <div class="testimonial-client">Manufacturing Company — Orange County</div>
-        <div class="testimonial-service">Multi-entity consolidation &amp; fractional CFO</div>
+    <div class="engagement-card reveal">
+      <div class="engagement-body">An Orange County manufacturer with five legal entities had no documented consolidation process — close logic existed only in the institutional memory of one person. We rebuilt the entire process in Power Query with automated workbooks, documented intercompany eliminations, and established a repeatable monthly workflow. Month-end close dropped from three weeks to one.</div>
+      <div class="engagement-attr">
+        <div class="engagement-client">Manufacturing Company — Orange County</div>
+        <div class="engagement-service">Multi-entity consolidation &amp; fractional CFO</div>
       </div>
     </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">ASC 606 was something our team had been avoiding because no one was sure how to apply it to our contract structure. Jeffrey walked through it, wrote the technical memo, and made sure our financial statements reflected it correctly before investors ever saw them. That kind of precision matters when you're raising.</div>
-      <div class="testimonial-attr">
-        <div class="testimonial-client">Technology Startup — California</div>
-        <div class="testimonial-service">ASC 606 revenue recognition &amp; financial statement preparation</div>
+    <div class="engagement-card reveal">
+      <div class="engagement-body">A Southern California distribution company was spending the better part of three weeks each month on manual cash reconciliations and balance sheet schedule prep rebuilt from scratch every close. We automated the full process using Python and VBA macros pulling directly from bank-sourced data files into reconciled workbooks. Month-end close time dropped from weeks to hours.</div>
+      <div class="engagement-attr">
+        <div class="engagement-client">Distribution Company — Southern California</div>
+        <div class="engagement-service">Cash reconciliation automation &amp; month-end close buildout</div>
       </div>
     </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">Our board reporting had grown into a manual nightmare — pulling numbers from six different places every month. Jeffrey restructured the whole close schedule, automated most of the backup, and rebuilt the board package template. We now close faster and the board actually reads the reports.</div>
-      <div class="testimonial-attr">
-        <div class="testimonial-client">Professional Services Firm — California</div>
-        <div class="testimonial-service">Month-end close optimization &amp; board reporting buildout</div>
+    <div class="engagement-card reveal">
+      <div class="engagement-body">A California professional services firm operating without a Controller had accumulated years of chart of accounts inconsistencies, undocumented accruals, and no audit trail on key balance sheet accounts. We restructured the books, built automated schedules for every major balance sheet area, and brought the company to audit-ready condition within one quarter — enabling a successful lender presentation.</div>
+      <div class="engagement-attr">
+        <div class="engagement-client">Professional Services Firm — California</div>
+        <div class="engagement-service">Fractional Controller services &amp; audit readiness</div>
       </div>
     </div>
   </div>
