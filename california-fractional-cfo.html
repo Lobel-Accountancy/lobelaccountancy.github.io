@@ -96,7 +96,12 @@
     .nav-links a:hover { color: var(--gold); }
     .nav-cta { font-size: .73rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--black); border: 1.5px solid var(--gold); padding: .48rem 1.25rem; text-decoration: none; transition: background .2s, color .2s; }
     .nav-cta:hover { background: var(--gold); color: #fff; }
-    @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } }
+    .nav-actions { display: flex; gap: .75rem; align-items: center; }
+    .nav-book { font-size: .73rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--navy); padding: .48rem 1.25rem; text-decoration: none; transition: background .2s; }
+    .nav-book:hover { background: #243650; }
+    .btn-book { background: var(--navy); color: #fff; padding: .82rem 2rem; font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .2s; display: inline-block; }
+    .btn-book:hover { background: #243650; }
+    @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links, .nav-book { display: none; } }
     .section-label { font-size: .67rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; }
     .page-hero { padding: 8rem 4rem 5rem; background: var(--navy); }
     .page-hero-inner { max-width: 760px; }
@@ -179,7 +184,10 @@
     <li><a href="case-studies.html">Case Studies</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="index.html#contact">Start a Conversation</a>
+  <div class="nav-actions">
+    <a class="nav-cta" href="index.html#contact">Start a Conversation</a>
+    <a class="nav-book" href="https://meetings-na2.hubspot.com/jeffrey-lobel" target="_blank" rel="noopener">Book a Free Consultation</a>
+  </div>
 </nav>
 <main>
 
@@ -307,6 +315,7 @@
     <p>Start with a direct conversation. We'll scope the engagement honestly — including whether you need a CFO or something more targeted.</p>
   </div>
   <div class="cta-band-actions">
+    <a class="btn-book" href="https://meetings-na2.hubspot.com/jeffrey-lobel" target="_blank" rel="noopener">Book a Free Consultation</a>
     <a class="btn-gold" href="mailto:info@lobelaccountancy.com">info@lobelaccountancy.com</a>
     <a class="btn-outline-white" href="case-studies.html">See Case Studies →</a>
   </div>
@@ -335,5 +344,8 @@
   </div>
 </footer>
 
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246336366.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 </html>
