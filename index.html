@@ -33,8 +33,8 @@
       --navy:   #1b2a3e;
       --gold:   #b8975a;
       --gold-lt:#d4b07a;
-      --cream:  #f5f0e8;
-      --off:    #faf8f4;
+      --cream:  #ffffff;
+      --off:    #ffffff;
       --muted:  #576474;
       --rule:   #d8cfc2;
     }
@@ -46,7 +46,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 4rem;
-      background: rgba(250,248,244,0.96);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--rule);
       animation: fadeDown .6s ease both;
@@ -66,7 +66,7 @@
     .nav-book:hover { background: #243650; }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: .3rem; }
     .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); margin: 5px 0; transition: .3s; }
-    .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; background: rgba(250,248,244,0.98); backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); padding: 1.5rem 2rem; z-index: 99; }
+    .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); padding: 1.5rem 2rem; z-index: 99; }
     .mobile-menu a { display: block; font-size: .85rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: .75rem 0; border-bottom: 1px solid var(--rule); }
     .mobile-menu a:last-child { border-bottom: none; color: var(--gold); }
     .mobile-menu.open { display: block; }
@@ -348,6 +348,8 @@
       .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
       .hero::before { display: none; }
       .hero-text { padding-right: 0; }
+      .hero-lac { display: none; }
+      .hero-fullname { display: none; }
       .hero-visual { padding-left: 0; margin-top: 2rem; }
       .stat-card:first-child { margin-left: 0; }
       .intro { grid-template-columns: 1fr; gap: 1rem; padding: 4rem 1.5rem; }
