@@ -195,20 +195,20 @@
     .intro-body p { font-size: .95rem; line-height: 1.85; color: var(--muted); max-width: 610px; margin-bottom: 1rem; }
 
     /* ── SERVICES ── */
-    .services { background: var(--black); padding: 6rem 4rem; }
-    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 2rem; }
-    .services-header h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.85rem,3.5vw,2.75rem); font-weight: 300; color: #fff; line-height: 1.2; }
-    .services-header h2 em { font-style: italic; color: var(--gold-lt); }
-    .services-header p { font-size: .8rem; color: rgba(255,255,255,.35); max-width: 220px; text-align: right; line-height: 1.7; }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.07); }
-    .service-item { background: var(--black); padding: 2.1rem 1.7rem; border-top: 2px solid transparent; transition: border-color .25s, background .25s; }
-    .service-item:hover { border-color: var(--gold); background: rgba(184,151,90,.05); }
-    .service-num { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; font-weight: 300; color: rgba(255,255,255,.07); line-height: 1; margin-bottom: .65rem; }
-    .service-title { font-size: .88rem; font-weight: 500; color: #fff; letter-spacing: .02em; margin-bottom: .65rem; }
-    .service-desc { font-size: .78rem; line-height: 1.75; color: rgba(255,255,255,.55); }
+    .services { background: #fff; padding: 6rem 4rem; }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; }
+    .services-header h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.85rem,3.5vw,2.75rem); font-weight: 300; color: var(--black); line-height: 1.2; }
+    .services-header h2 em { font-style: italic; color: var(--gold); }
+    .services-header p { font-size: .8rem; color: var(--muted); max-width: 220px; text-align: right; line-height: 1.7; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); }
+    .service-item { background: #fff; padding: 2.1rem 1.7rem; border-top: 2px solid transparent; transition: border-color .25s, background .25s; }
+    .service-item:hover { border-color: var(--gold); background: rgba(184,151,90,.04); }
+    .service-num { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; font-weight: 300; color: rgba(0,0,0,.06); line-height: 1; margin-bottom: .65rem; }
+    .service-title { font-size: .88rem; font-weight: 500; color: var(--black); letter-spacing: .02em; margin-bottom: .65rem; }
+    .service-desc { font-size: .78rem; line-height: 1.75; color: var(--muted); }
     .service-tag { display: inline-block; margin-top: 1rem; font-size: .63rem; letter-spacing: .13em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,151,90,.33); padding: .2rem .58rem; }
     .service-bullets { margin-top: .8rem; padding-left: 0; list-style: none; }
-    .service-bullets li { font-size: .73rem; line-height: 1.7; color: rgba(255,255,255,.55); padding-left: .9rem; position: relative; }
+    .service-bullets li { font-size: .73rem; line-height: 1.7; color: var(--muted); padding-left: .9rem; position: relative; }
     .service-bullets li::before { content: "—"; position: absolute; left: 0; color: var(--gold); opacity: .5; }
 
     /* ── INDUSTRIES ── */
@@ -268,7 +268,7 @@
     .why-item { display: flex; gap: .85rem; align-items: flex-start; }
     .why-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: .55rem; flex-shrink: 0; }
     .why-item-text { font-size: .86rem; line-height: 1.7; color: var(--ink); }
-    .why-panel { background: var(--black); padding: 2.6rem; display: flex; flex-direction: column; gap: 1.6rem; }
+    .why-panel { background: var(--navy); padding: 2.6rem; display: flex; flex-direction: column; gap: 1.6rem; }
     .credential { border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 1.5rem; }
     .credential:last-child { border-bottom: none; padding-bottom: 0; }
     .credential-title { font-size: .67rem; letter-spacing: .13em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
@@ -283,17 +283,17 @@
     .lac-band-text p { font-size: .82rem; color: rgba(255,255,255,.42); line-height: 1.7; max-width: 480px; }
 
     /* ── CONTACT ── */
-    .contact { background: var(--black); padding: 6rem 4rem; }
+    .contact { background: #fff; padding: 6rem 4rem; }
     .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-    .contact .section-label { display: flex; justify-content: center; color: var(--gold-lt); }
-    .contact h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.9rem,4vw,2.9rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 1rem; margin-top: .7rem; }
-    .contact h2 em { font-style: italic; color: var(--gold-lt); }
-    .contact > .contact-inner > p { font-size: .92rem; line-height: 1.8; color: rgba(255,255,255,.72); margin-bottom: 2.3rem; }
+    .contact .section-label { display: flex; justify-content: center; color: var(--gold); }
+    .contact h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.9rem,4vw,2.9rem); font-weight: 300; color: var(--black); line-height: 1.2; margin-bottom: 1rem; margin-top: .7rem; }
+    .contact h2 em { font-style: italic; color: var(--gold); }
+    .contact > .contact-inner > p { font-size: .92rem; line-height: 1.8; color: var(--muted); margin-bottom: 2.3rem; }
     .contact-methods { display: flex; gap: 1.3rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem; }
-    .contact-method { display: flex; align-items: center; gap: .52rem; font-size: .8rem; color: rgba(255,255,255,.7); text-decoration: none; border: 1px solid rgba(255,255,255,.12); padding: .72rem 1.25rem; transition: border-color .2s, color .2s; background: rgba(255,255,255,.03); }
+    .contact-method { display: flex; align-items: center; gap: .52rem; font-size: .8rem; color: var(--muted); text-decoration: none; border: 1px solid var(--rule); padding: .72rem 1.25rem; transition: border-color .2s, color .2s; background: transparent; }
     .contact-method:hover { border-color: var(--gold); color: var(--gold); }
     .contact-method svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-    .contact-note { font-size: .73rem; color: rgba(255,255,255,.72); letter-spacing: .04em; }
+    .contact-note { font-size: .73rem; color: var(--muted); letter-spacing: .04em; }
 
     /* ── FOOTER ── */
     footer { background: var(--black); border-top: 1px solid rgba(255,255,255,.07); padding: 2.2rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -317,7 +317,7 @@
     .area-card-list { list-style: none; padding: 0; }
     .area-card-list li { font-size: .76rem; line-height: 1.75; color: var(--muted); padding-left: .9rem; position: relative; }
     .area-card-list li::before { content: "—"; position: absolute; left: 0; color: var(--gold); opacity: .6; }
-    .areas-national { background: var(--black); padding: 1.4rem 1.8rem; display: flex; align-items: flex-start; gap: 1.2rem; }
+    .areas-national { background: var(--navy); padding: 1.4rem 1.8rem; display: flex; align-items: flex-start; gap: 1.2rem; }
     .areas-national-icon { flex-shrink: 0; margin-top: .15rem; }
     .areas-national-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
     .areas-national-text { font-size: .84rem; line-height: 1.7; color: rgba(255,255,255,.65); }
@@ -385,15 +385,15 @@
     .trust-item-sub { font-size: .63rem; color: var(--muted); }
 
     /* ── TESTIMONIALS ── */
-    .engagements { padding: 6rem 4rem; background: var(--navy); }
+    .engagements { padding: 6rem 4rem; background: #fff; }
     .engagements .section-label { color: var(--gold); margin-bottom: .9rem; }
-    .engagements h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.65rem,3vw,2.4rem); font-weight: 300; color: #fff; margin-bottom: 3rem; }
+    .engagements h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(1.65rem,3vw,2.4rem); font-weight: 300; color: var(--black); margin-bottom: 3rem; }
     .engagements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .engagement-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-top: 2px solid var(--gold); padding: 2rem 2rem 1.7rem; position: relative; }
-    .engagement-body { font-family: "Cormorant Garamond", serif; font-size: 1.08rem; font-weight: 300; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 1.4rem; }
-    .engagement-attr { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1rem; }
-    .engagement-client { font-size: .76rem; font-weight: 500; color: rgba(255,255,255,.65); letter-spacing: .04em; }
-    .engagement-service { font-size: .68rem; color: rgba(255,255,255,.3); margin-top: .2rem; letter-spacing: .06em; }
+    .engagement-card { background: #fff; border: 1px solid var(--rule); border-top: 2px solid var(--gold); padding: 2rem 2rem 1.7rem; position: relative; }
+    .engagement-body { font-family: "Cormorant Garamond", serif; font-size: 1.08rem; font-weight: 300; color: var(--ink); line-height: 1.75; margin-bottom: 1.4rem; }
+    .engagement-attr { border-top: 1px solid var(--rule); padding-top: 1rem; }
+    .engagement-client { font-size: .76rem; font-weight: 500; color: var(--black); letter-spacing: .04em; }
+    .engagement-service { font-size: .68rem; color: var(--muted); margin-top: .2rem; letter-spacing: .06em; }
     @media (max-width: 768px) {
       .engagements-grid { grid-template-columns: 1fr; }
       .engagements { padding: 4rem 1.5rem; }
@@ -589,7 +589,7 @@
     <div class="hero-lac">L<span class="a">A</span>C</div>
     <h1 class="hero-fullname">Lobel Accountancy Corporation &nbsp;·&nbsp; CPA</h1>
     <div class="hero-divider"></div>
-    <p class="hero-sub">Audit, review, compilation, and financial reporting services for privately held companies that demand institutional-quality work — without the institutional overhead.</p>
+    <p class="hero-sub">Audit, review, compilation, and financial reporting services for small and midsize businesses — typically under $10M in revenue — that need senior-level financial work without the overhead of a large firm.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#services">Our Services</a>
       <a class="btn-ghost" href="jeffrey-lobel.html">About the Company</a>
@@ -656,7 +656,7 @@
   <div class="intro-label">Who We Are</div>
   <div class="intro-body">
     <h2>The financial rigor of a large firm. The attention of a dedicated partner.</h2>
-    <p>Lobel Accountancy Corporation serves privately held companies, specialty lenders, and growing businesses that need audit-quality financial work and decision-ready reporting — without being handed off to junior staff.</p>
+    <p>Lobel Accountancy Corporation serves small and midsize businesses — typically under $10M in revenue — that need audit-quality financial work and decision-ready reporting without being handed off to junior staff.</p>
     <p>From month-end close ownership and financial statement preparation to full-scope audits and fractional CFO support, every engagement is led by a senior CPA and CFE with deep experience across complex entity structures, technical accounting standards, and the systems behind the numbers.</p>
   </div>
 </section>
@@ -750,7 +750,7 @@
 <section class="industries" id="industries">
   <div class="section-label reveal">Industries Served</div>
   <h2 class="reveal">Deep expertise where it matters most</h2>
-  <p class="reveal">LAC brings specialized knowledge across financial services, manufacturing, and technology — and serves privately held companies of all kinds where the accounting complexity demands senior-level attention.</p>
+  <p class="reveal">LAC brings specialized knowledge across financial services, manufacturing, and technology — and serves small and midsize businesses across all industries where the accounting complexity demands senior-level attention.</p>
   <div class="industry-grid">
     <div class="industry-card reveal industry-featured">
       <div class="industry-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
@@ -790,7 +790,7 @@
     <div class="industry-card reveal industry-all">
       <div class="industry-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
       <div class="industry-name">All Industries</div>
-      <div class="industry-note">LAC serves privately held companies across all industries. If you need senior-level accounting, audit, or financial reporting support, we want to hear from you.</div>
+      <div class="industry-note">LAC serves small and midsize businesses across all industries. If your business is under $10M in revenue and needs senior-level accounting, audit, or financial reporting support, we want to hear from you.</div>
     </div>
   </div>
 </section>
@@ -860,7 +860,7 @@
   <div class="why-text reveal">
     <div class="section-label">Why LAC</div>
     <h2>Senior expertise. Every engagement, every time.</h2>
-    <p>Most firms assign their best people to their biggest clients. At Lobel Accountancy Corporation, every client gets the same senior-level attention — because every engagement is led by the same principal CPA.</p>
+    <p>Most firms treat small and midsize businesses as training accounts. At Lobel Accountancy Corporation, every client gets the same senior-level attention — because every engagement is led by the same principal CPA.</p>
     <div class="why-list">
       <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Deep experience with complex entity structures — consolidated subsidiaries, VIEs, securitization trusts, and multi-state operations</div></div>
       <div class="why-item"><div class="why-dot"></div><div class="why-item-text">Financial statements and memos written to be read and understood — not just filed</div></div>
@@ -920,7 +920,7 @@
   <div class="lac-band-text">
     <div class="lac-band-fullname">Lobel Accountancy Corporation</div>
     <h3>Built on the belief that serious financial work deserves serious attention.</h3>
-    <p>A California licensed CPA firm serving privately held companies with audit, assurance, and financial advisory services.</p>
+    <p>A California licensed CPA firm serving small and midsize businesses with audit, assurance, and financial advisory services.</p>
   </div>
 </section>
 
